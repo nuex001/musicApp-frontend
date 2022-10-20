@@ -52,7 +52,7 @@ function Search() {
               >
                 <audio src="" style={{ display: "none" }}></audio>
                 <div className="detail">
-                  <img src={`http://localhost:5000/${music.cover}`} alt="" />
+                  <img src={`https://musicapp-api.onrender.com/${music.cover}`} alt="" />
                   <AiOutlineHeart className="fa hrt" />
                   <p>
                     {music.title} ~ {music.artist}

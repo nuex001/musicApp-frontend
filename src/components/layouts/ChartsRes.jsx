@@ -68,7 +68,7 @@ function ChartsRes() {
           charts.map((chart) => (
             <SwiperSlide className="slides" key={chart._id}>
               <Link to={`playlist/${chart._id}`}>
-                <img src={`http://localhost:5000/${chart.cover}`} alt="" />
+                <img src={`https://musicapp-api.onrender.com/${chart.cover}`} alt="" />
                 <h4>{chart.title}</h4>
                 <span>{chart.artist}</span>
                 <p>2:34:45</p>

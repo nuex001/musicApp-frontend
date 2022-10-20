@@ -115,7 +115,7 @@ function Playlist() {
         {music ? (
           <div className="header">
             <img
-              src={`http://localhost:5000/${music.cover}`}
+              src={`https://musicapp-api.onrender.com/${music.cover}`}
               alt=""
               className="cover"
             />
@@ -170,13 +170,13 @@ function Playlist() {
             music.songs.map((song, index) => (
               <div className="row" data-index={index} onClick={onclick}>
                 <audio
-                  src={`http://localhost:5000/${song}`}
+                  src={`https://musicapp-api.onrender.com/${song}`}
                   onLoadedMetadata={onLoadedMetadata}
                   style={{ display: "none" }}
                 ></audio>
                 <div className="detail" data-index={index}>
                   <img
-                    src={`http://localhost:5000/${music.cover}`}
+                    src={`https://musicapp-api.onrender.com/${music.cover}`}
                     alt=""
                     data-index={index}
                   />
@@ -195,13 +195,13 @@ function Playlist() {
                   4:17
                 </p>
                 <Link
-                  to={`http://localhost:5000/${song}`}
+                  to={`https://musicapp-api.onrender.com/${song}`}
                   className="fa"
                   onClick={async (e) => {
                     e.preventDefault();
                     const res = await axios({
                       method: "get",
-                      url: `http://localhost:5000/api/downloads/?fileName=${song}`,
+                      url: `https://musicapp-api.onrender.com/api/downloads/?fileName=${song}`,
                       responseType: "blob",
                       headers: {},
                     });

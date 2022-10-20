@@ -100,7 +100,7 @@ function Home() {
                   className="row"
                   key={chart._id}
                 >
-                  <img src={`http://localhost:5000/${chart.cover}`} alt="" />
+                  <img src={`https://musicapp-api.onrender.com/${chart.cover}`} alt="" />
                   <div className="text">
                     <h4>{chart.title}</h4>
                     <span>{chart.artist}</span>

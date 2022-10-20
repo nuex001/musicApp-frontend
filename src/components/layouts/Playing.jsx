@@ -174,10 +174,10 @@ function Playing() {
       const name = document.querySelector(".display .text h1");
       // console.log(img);
 
-      audio.src = `http://localhost:5000/${music.songs[index]}`;
+      audio.src = `https://musicapp-api.onrender.com/${music.songs[index]}`;
       artist.textContent = music.artist;
       name.textContent = music.title;
-      img.src = `http://localhost:5000/${music.cover}`;
+      img.src = `https://musicapp-api.onrender.com/${music.cover}`;
       if (nowplaying) {
         audio.play();
       }

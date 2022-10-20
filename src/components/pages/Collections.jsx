@@ -48,7 +48,7 @@ function Collections() {
                 key={item._id}
               >
                 <img
-                  src={`http://localhost:5000/${item.cover}`}
+                  src={`https://musicapp-api.onrender.com/${item.cover}`}
                   alt=""
                   className="cover"
                 />

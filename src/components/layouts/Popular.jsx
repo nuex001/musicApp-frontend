@@ -50,7 +50,7 @@ function Popular() {
           musics.map((song) => (
             <SwiperSlide className="slides" key={song._id}>
             <Link to={`playlist/${song._id}`}>
-              <img src={`http://localhost:5000/${song.cover}`} alt="" />
+              <img src={`https://musicapp-api.onrender.com/${song.cover}`} alt="" />
               <h6>{song.title}</h6>
               <p>{song.artist}</p>
             </Link>
