@@ -28,7 +28,6 @@ function Search() {
     navigate(-1);
   }
   useEffect(() => {
-    log(name)
     if (name) {
       axios
         .get(`https://musicapp-api.onrender.com/api/searchs?q=${name}`)
