@@ -17,7 +17,7 @@ const initialState = {
 // Generates async functions
 
 export const fetchMusics = createAsyncThunk("musics/fetchMusics", () => {
-  return axios.get("https://musicapp-api.onrender.com/api").then((response) => response.data);
+  return axios.get("https://musicapp-api.onrender.com/api/").then((response) => response.data);
 });
 
 export const fetchCharts = createAsyncThunk("musics/fetchCharts", () => {
