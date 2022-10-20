@@ -17,14 +17,14 @@ const initialState = {
 // Generates async functions
 
 export const fetchMusics = createAsyncThunk("musics/fetchMusics", () => {
-  return axios.get("/api").then((response) => response.data);
+  return axios.get("https://musicapp-api.onrender.com/api").then((response) => response.data);
 });
 
 export const fetchCharts = createAsyncThunk("musics/fetchCharts", () => {
-  return axios.get("/api/charts/").then((response) => response.data);
+  return axios.get("https://musicapp-api.onrender.com/api/charts/").then((response) => response.data);
 });
 export const fetchPlaylist = createAsyncThunk("musics/fetchPlaylist", (e) => {
-  return axios.get(`/api/${e}`).then((response) => response.data);
+  return axios.get(`https://musicapp-api.onrender.com/api/${e}`).then((response) => response.data);
 });
 
 // working for likes
