@@ -22,7 +22,7 @@ function Search() {
   );
   if (name) {
     axios
-      .get(`https://musicapp-api.onrender.com/api/search?q=${name}`)
+      .get(`https://musicapp-api.onrender.com/api/searchs?q=${name}`)
       .then((response) => dispatch(setMusics(response.data)));
   } else {
     navigate(-1);
@@ -31,7 +31,7 @@ function Search() {
     log(name)
     if (name) {
       axios
-        .get(`https://musicapp-api.onrender.com/api/search?q=${name}`)
+        .get(`https://musicapp-api.onrender.com/api/searchs?q=${name}`)
         .then((response) => dispatch(setMusics(response.data)));
     } else {
       navigate(-1);
