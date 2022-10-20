@@ -17,7 +17,7 @@ function App() {
           <Route exact path="/playlist/:id" element={<Playlist />} />
           <Route exact path="/Collections" element={<Collections />} />
           <Route exact path="/upload" element={<Upload />} />
-          <Route  path="/search" element={<Search />} />
+          <Route exact path="/upload" element={<Search />} />
         </Routes>
       </div>
     </Router>
