@@ -18,7 +18,7 @@ function Upload() {
     e.preventDefault();
     const formData = new FormData(e.target);
     axios
-      .post("/api/", formData, {
+      .post("https://musicapp-api.onrender.com/api/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

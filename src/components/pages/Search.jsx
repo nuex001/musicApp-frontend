@@ -23,7 +23,7 @@ function Search() {
   useEffect(() => {
     if (name) {
       axios
-        .get(`/api/search?q=${name}`)
+        .get(`https://musicapp-api.onrender.com/api/search?q=${name}`)
         .then((response) => dispatch(setMusics(response.data)));
     } else {
       navigate(-1);

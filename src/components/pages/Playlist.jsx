@@ -43,7 +43,7 @@ function Playlist() {
     form.append("audioId", e);
     form.append("userId", data);
     try {
-      await axios.put("/api/like/", form).then((response) => response.data);
+      await axios.put("https://musicapp-api.onrender.com/api/like/", form).then((response) => response.data);
       dispatch(fetchPlaylist(id));
     } catch (error) {}
   };
@@ -53,7 +53,7 @@ function Playlist() {
     form.append("audioId", e);
     form.append("userId", data);
     try {
-      await axios.put("/api/unLike/", form).then((response) => response.data);
+      await axios.put("https://musicapp-api.onrender.com/api/unLike/", form).then((response) => response.data);
       dispatch(fetchPlaylist(id));
     } catch (error) {}
   };
