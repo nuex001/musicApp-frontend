@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
+// import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Home from "./components/pages/Home";
+import Navbar from "./components/layouts/Navbar";
+import Playlist from "./components/pages/Playlist";
+import Collections from "./components/pages/Collections";
+import Upload from "./components/pages/Upload"
+import Search from "./components/pages/Search";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="container">
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/playlist/:id" element={<Playlist />} />
+          <Route exact path="/Collections" element={<Collections />} />
+          <Route exact path="/upload" element={<Upload />} />
+          <Route exact path="/search" element={<Search />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
