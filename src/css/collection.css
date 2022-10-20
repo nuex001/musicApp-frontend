@@ -139,7 +139,7 @@
   .collection .box .row {
     width: 95%;
     height: 25em;
-    pointer-events: none;
+    /* pointer-events: none; */
   }
   .collection .box .row .info {
     bottom: 8%;
@@ -165,7 +165,7 @@
   .collection .box .row {
     width: 45%;
     height: 25em;
-    pointer-events: none;
+    /* pointer-events: none; */
   }
   .collection .box .row .info {
     bottom: 8%;

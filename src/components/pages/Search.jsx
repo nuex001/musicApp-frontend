@@ -20,13 +20,7 @@ function Search() {
   const { loading, error, charts, musics } = useSelector(
     (state) => state.audios
   );
-  if (name) {
-    axios
-      .get(`https://musicapp-api.onrender.com/api/searchs?q=${name}`)
-      .then((response) => dispatch(setMusics(response.data)));
-  } else {
-    navigate(-1);
-  }
+  
   useEffect(() => {
     if (name) {
       axios
