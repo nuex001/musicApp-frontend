@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import home from "../../images/homeActive.png";
 import playList from "../../images/playlist.png";
@@ -8,23 +8,31 @@ import videos from "../../images/videos.png";
 import profile from "../../images/profile.png";
 import signOut from "../../images/signOut.png";
 import { AiOutlineSearch } from "react-icons/ai";
+
 function Navbar() {
+  const navigate = useNavigate();
   const menu = () => {
     const sideBar = document.querySelector(".sideBar");
     const mobileNav = document.querySelector(".mobileNav");
     mobileNav.classList.toggle("active");
     sideBar.classList.toggle("active");
   };
+
+  const onsubmit = (e) => {
+    e.preventDefault();
+    navigate(`/search?q=${e.target.q.value}`);
+  };
+
   return (
     <React.Fragment>
       <nav>
         <img src={logo} alt="" className="logo" />
-        <form action="/search">
+        <form action="/search" onSubmit={onsubmit}>
           <input type="submit" id="submit" style={{ display: "none" }} />
           <label htmlFor="submit">
             <AiOutlineSearch />
           </label>
-          <input type="text" placeholder="Search" name="q"/>
+          <input type="text" placeholder="Search" name="q" />
         </form>
       </nav>
       <aside>
@@ -57,8 +65,8 @@ function Navbar() {
           <span></span>
         </div>
         <img src={logo} alt="" className="logo" />
-        <form action="/search">
-          <input type="text" placeholder="Search" name="q"/>
+        <form action="/search" onSubmit={onsubmit}>
+          <input type="text" placeholder="Search" name="q" />
           <input type="submit" id="submit" style={{ display: "none" }} />
           <label htmlFor="submit">
             <AiOutlineSearch />
