@@ -21,6 +21,7 @@ function Search() {
     (state) => state.audios
   );
   useEffect(() => {
+    log(name)
     if (name) {
       axios
         .get(`https://musicapp-api.onrender.com/api/search?q=${name}`)
