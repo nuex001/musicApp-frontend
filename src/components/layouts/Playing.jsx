@@ -120,8 +120,7 @@ function Playing() {
 
       default:
         console.log("dffd");
-        index < music.songs.length - 1 &&
-          dispatch(setIndex(parseInt(index) + 1));
+        index < music.songs.length - 1 && dispatch(setIndex(parseInt(index) + 1));
         break;
     }
   };
@@ -165,11 +164,7 @@ function Playing() {
     //  console.log(volumeBar);
     volumeBar.classList.toggle("active");
   };
-  useEffect(() => {
-    if (music) {
-      setIndex(0);
-    }
-  }, []);
+
   useEffect(() => {
     if (music) {
       // console.log(music);
