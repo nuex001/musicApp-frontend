@@ -4,7 +4,7 @@ module.exports = function (app) {
   app.use(
     "/api",
     createProxyMiddleware({
-      target: "https://musicapp-api.onrender.com",
+      target: "https://musicapp-api.onrender.com/",
       changeOrigin: true,
     })
   );
