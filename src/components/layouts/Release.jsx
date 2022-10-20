@@ -29,7 +29,7 @@ function Release() {
       <h1>New releases</h1>
       <Swiper
         breakpoints={{
-          375: {
+          280: {
             slidesPerView: 1.7,
           },
           768: {

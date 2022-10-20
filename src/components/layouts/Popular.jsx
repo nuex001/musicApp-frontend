@@ -28,7 +28,7 @@ function Popular() {
       <h1>Poupular in your area</h1>
       <Swiper
         breakpoints={{
-          375: {
+          280: {
             slidesPerView: 1.7,
           },
           768: {
