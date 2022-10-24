@@ -66,7 +66,6 @@ function Search() {
             ))}
         </main>
       </motion.div>
-      <Playing />
     </React.Fragment>
   );
 }

@@ -7,6 +7,7 @@ import Playlist from "./components/pages/Playlist";
 import Collections from "./components/pages/Collections";
 import Upload from "./components/pages/Upload"
 import Search from "./components/pages/Search";
+import Playing from "./components/layouts/Playing";
 function App() {
   return (
     <Router>
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/upload" element={<Upload />} />
           <Route exact path="/search" element={<Search />} />
         </Routes>
+        <Playing/>
       </div>
     </Router>
   );

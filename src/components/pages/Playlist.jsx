@@ -225,7 +225,6 @@ function Playlist() {
             ))}
         </main>
       </motion.div>
-      <Playing />
     </React.Fragment>
   );
 }

@@ -73,7 +73,6 @@ function Collections() {
             ))}
         </div>
       </motion.div>
-      <Playing />
     </React.Fragment>
   );
 }

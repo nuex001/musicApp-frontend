@@ -137,7 +137,6 @@ function Home() {
         </header>
         <Release />
         <Popular />
-        <Playing />
       </motion.section>
     </React.Fragment>
   );
