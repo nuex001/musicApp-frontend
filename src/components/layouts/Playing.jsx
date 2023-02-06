@@ -26,9 +26,10 @@ function Playing() {
 
   const [audioVolume, setAudioVolume] = useState(1);
   const [flow, setFlow] = useState("normal");
-  const audio = musicRef.current;
   const musicRef = useRef();
   const progressCont = useRef();
+
+  const audio = musicRef.current;
 
   const setprogress = (e) => {
     if (e.target.tagName !== "SPAN") {
