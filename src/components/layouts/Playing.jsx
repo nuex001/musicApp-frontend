@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "../../App.css";
 // import cover from "../../images/Rectangle 21.png";
 import { HiRefresh } from "react-icons/hi";
@@ -26,7 +26,9 @@ function Playing() {
 
   const [audioVolume, setAudioVolume] = useState(1);
   const [flow, setFlow] = useState("normal");
-  const audio = document.querySelector("#audio_palying");
+  const audio = musicRef.current;
+  const musicRef = useRef();
+  const progressCont = useRef();
 
   const setprogress = (e) => {
     if (e.target.tagName !== "SPAN") {
@@ -50,7 +52,7 @@ function Playing() {
 
   //   toggleAudio
   const toggleAudio = () => {
-    const audio = document.querySelector("#audio_palying");
+    const audio = musicRef.current;
 
     if (nowplaying) {
       audio.pause();
@@ -101,7 +103,7 @@ function Playing() {
   const onEnded = () => {};
   //next
   const next = () => {
-    const audio = document.querySelector("#audio_palying");
+    const audio = musicRef.current;
     let allmusic = music.songs.length;
 
     switch (playstate) {
@@ -120,13 +122,15 @@ function Playing() {
 
       default:
         console.log("dffd");
-        index < music.songs.length - 1 && dispatch(setIndex(parseInt(index) + 1));
+        index < music.songs.length - 1 &&
+          dispatch(setIndex(parseInt(index) + 1));
         break;
     }
   };
   // prev
   const prev = () => {
-    const audio = document.querySelector("#audio_palying");
+    const audio = musicRef.current;
+
     let allmusic = music.length;
     // console.log(playstate);
 
@@ -160,7 +164,7 @@ function Playing() {
   };
   //
   const showVolume = (e) => {
-    const volumeBar = document.querySelector(".volume .progress_cont");
+    const volumeBar = progressCont.current;
     //  console.log(volumeBar);
     volumeBar.classList.toggle("active");
   };
@@ -196,7 +200,8 @@ function Playing() {
           style={{ display: "none" }}
           onTimeUpdate={updateProgress}
           onEnded={next}
-          id="audio_palying"
+          ref={musicRef}
+          // id="audio_palying"
         />
         <div className="display">
           <img src="" alt="" />
@@ -241,6 +246,7 @@ function Playing() {
             className="progress_cont"
             onClick={setprogress}
             onTouchMove={setprogress}
+            ref={progressCont}
           >
             <div className="progress_bar">
               <span></span>

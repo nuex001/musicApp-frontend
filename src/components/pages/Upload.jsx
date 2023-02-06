@@ -3,7 +3,8 @@ import "../../css/upload.css";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function Upload() {
   const navigate = useNavigate();
 
@@ -14,23 +15,42 @@ function Upload() {
     img.src = imgUrl;
   }
 
+  const notify = () =>
+    toast("Sorry you have extended the free subscription", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      type: "error",
+      theme: "dark",
+    });
+
   const onSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    axios
-      .post("https://musicapp-api.onrender.com/api/", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
-      .then((res) => {
-        e.target.reset();
-        navigate("/");
-      });
+    if (localStorage.getItem("musicApp")) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      axios
+        .post("https://musicapp-api.onrender.com/api/", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
+        .then((res) => {
+          e.target.reset();
+          localStorage.setItem("musicApp", 1);
+          navigate("/");
+        });
+    } else {
+      notify();
+    }
   };
 
   return (
     <div className="upload_container">
+      <ToastContainer />
       <form action="" onSubmit={onSubmit} encType="multipart/form-data">
         <input
           type="file"
