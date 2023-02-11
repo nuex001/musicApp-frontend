@@ -29,8 +29,8 @@ function Upload() {
     });
 
   const onSubmit = (e) => {
-    if (localStorage.getItem("musicApp")) {
-      e.preventDefault();
+    e.preventDefault();
+    if (!localStorage.getItem("musicApp")) {
       const formData = new FormData(e.target);
       axios
         .post("https://musicapp-api.onrender.com/api/", formData, {
@@ -54,7 +54,7 @@ function Upload() {
       <form action="" onSubmit={onSubmit} encType="multipart/form-data">
         <input
           type="file"
-          accept="images/*"
+          accept="image/*"
           id="cover"
           name="cover"
           style={{ display: "none" }}
